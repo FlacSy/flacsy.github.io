@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background: #1f1f1f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+header p {
+    color: #b0b0b0;
+    margin: 5px 0;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.about-me {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 0;
+    color: #fff;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.skill {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+}
+
+.skill h3 svg {
+    width: 24px;
+    height: 24px;
+    fill: #4a9eff;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-list li {
+    background: #2a2a2a;
+    color: #4a9eff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.skill-list li:hover {
+    background: #333333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f1f1f;
+    color: #fff;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .skills {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        width: 90%;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+}

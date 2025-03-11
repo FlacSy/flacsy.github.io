@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/style.css">
+    <script src="static/scripts/script.js" defer></script>
+    <script src="static/scripts/activity.js" defer></script>
+    <title>FlacSy | Главная страница</title>
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <a href="index.html" class="active">Главная</a>
+            <a href="portfolio.html">Портфолио</a>
+            <a href="about_me.html">О себе</a>
+            <a href="contact.html">Контакты</a>
+        </nav>
+    </div>
+
+    <header>
+        <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy" class="avatar">
+        <h1>FlacSy</h1>
+        <p>Backend-разработчик</p>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Добро пожаловать на мой сайт!</h2>
+            <p>Я — Андрей, backend-разработчик. Специализируюсь на разработке высоконагруженных приложений и микросервисов. Создаю эффективные решения с использованием современных технологий.</p>
+        </section>
+
+        <section class="quick-links">
+            <div class="quick-link" onclick="window.location.href='portfolio.html'">
+                <h3>Мои проекты</h3>
+                <p>Ознакомьтесь с моими последними работами и open-source проектами</p>
+            </div>
+            <div class="quick-link" onclick="window.location.href='about_me.html'">
+                <h3>Навыки</h3>
+                <p>Узнайте больше о моих технических навыках и опыте работы</p>
+            </div>
+            <div class="quick-link" onclick="window.location.href='contact.html'">
+                <h3>Связаться</h3>
+                <p>Заинтересованы в сотрудничестве? Свяжитесь со мной!</p>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Года опыта</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Завершенных проектов</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Open Source проектов</div>
+            </div>
+        </section>
+
+        <section class="latest-activity">
+            <h2>Последняя активность</h2>
+            <div class="activity-list">
+                <!-- Здесь будет динамически загружаться активность -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FlacSy. Все права защищены.</p>
+    </footer>
+</body>
+</html>
