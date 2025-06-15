@@ -13,9 +13,16 @@ body {
     min-height: 100vh;
 }
 
+/* Стили для хедера */
+header {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 0 20px 40px 20px;
+    text-align: center;
+}
+
 /* Стили для навигации */
 .nav-container {
-    background: #1f1f1f;
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #333;
@@ -46,22 +53,74 @@ body {
     color: #fff;
 }
 
-/* Стили для хедера */
-header {
-    background-color: #1e1e1e;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
+#menuBtn{
+    display: none;
 }
 
-header h1 {
+.head-container {
+    padding: 40px 0 20px 0;
+}
+
+.head-container h1 {
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-header p {
+.head-container p {
     font-size: 18px;
     color: #b0b0b0;
+}
+
+@media (max-width: 768px) {
+    #menuBtn {
+        display: block;
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+        color: white;
+        font-size: 20px;
+        border-radius: 4px;
+        z-index: 1001;
+    }
+
+    .nav-container {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        position: fixed;
+        top: 20px;
+        left: 70px;
+        background-color: #1e1e1e;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        width: 200px;
+        display: none;
+        z-index: 1000;
+    }
+
+    .nav-container.showing {
+        display: block;
+    }
+
+    .nav-container.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav-container a:hover {
+        background-color: #333;
+        transform: translateY(-2px);
+        width: 100%;
+    }
+    .nav-container a {
+        width: 100%;
+        color: #e0e0e0;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
 }
 
 /* Общие стили контейнера */
@@ -70,6 +129,12 @@ header p {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        max-width: 1200px;
+    }
 }
 
 /* Стили для футера */
@@ -172,6 +237,23 @@ footer {
     font-size: 18px;
     line-height: 1.6;
     color: #b0b0b0;
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .hero p {
+        word-break: break-word;
+        hyphens: auto;
+        text-align: justify;
+        font-size: 17px;
+        line-height: 1.6;
+        color: #b0b0b0;
+    }
 }
 
 .quick-links {

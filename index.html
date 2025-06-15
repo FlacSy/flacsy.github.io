@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles/style.css">
-    <script src="static/scripts/script.js" defer></script>
     <script src="static/scripts/activity.js" defer></script>
     <title>FlacSy | Главная страница</title>
 </head>
 <body>
-    <div class="nav-container">
-        <nav>
-            <a href="index.html" class="active">Главная</a>
-            <a href="portfolio.html">Портфолио</a>
-            <a href="about_me.html">О себе</a>
-            <a href="community.html">Сообщество</a>
-            <a href="contact.html">Контакты</a>
-        </nav>
-    </div>
-
     <header>
-        <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy" class="avatar">
-        <h1>FlacSy</h1>
-        <p>Backend-разработчик</p>
+        <button class="menu-toggle" id="menuBtn">☰</button>
+        <div class="nav-container" id="nav-container">
+            <nav>
+                <a href="index.html" class="active">Главная</a>
+                <a href="portfolio.html">Портфолио</a>
+                <a href="about_me.html">О себе</a>
+                <a href="community.html">Сообщество</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+        </div>
+        <div class="head-container">
+            <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy" class="avatar">
+            <h1>FlacSy</h1>
+            <p>Backend-разработчик</p>
+        </div>
     </header>
 
     <div class="container">
@@ -72,5 +73,27 @@
     <footer>
         <p>&copy; 2025 FlacSy. Все права защищены.</p>
     </footer>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('nav-container');
+
+        let menuVisible = false;
+
+        menuBtn.addEventListener('click', () => {
+            if (!menuVisible) {
+                menu.classList.add('showing');
+                requestAnimationFrame(() => {
+                    menu.classList.add('visible');
+                });
+            } else {
+                menu.classList.remove('visible');
+                menu.addEventListener('transitionend', () => {
+                    menu.classList.remove('showing');
+                }, { once: true });
+            }
+
+            menuVisible = !menuVisible;
+        });
+    </script>
 </body>
 </html>
