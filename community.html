@@ -8,20 +8,22 @@
     <title>FlacSy | Сообщество</title>
 </head>
 <body>
-    <div class="nav-container">
-        <nav>
-            <a href="index.html">Главная</a>
-            <a href="portfolio.html">Портфолио</a>
-            <a href="about_me.html">О себе</a>
-            <a href="community.html" class="active">Сообщество</a>
-            <a href="contact.html">Контакты</a>
-        </nav>
-    </div>
-
     <header>
-        <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy" class="avatar">
-        <h1>Сообщество</h1>
-        <p>Присоединяйтесь к нашему сообществу разработчиков</p>
+        <button class="menu-toggle" id="menuBtn">☰</button>
+        <div class="nav-container" id="nav-container">
+            <nav>
+                <a href="index.html">Главная</a>
+                <a href="portfolio.html">Портфолио</a>
+                <a href="about_me.html">О себе</a>
+                <a href="community.html" class="active">Сообщество</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+        </div>
+        <div class="head-container">
+            <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy" class="avatar">
+            <h1>Сообщество</h1>
+            <p>Присоединяйтесь к нашему сообществу разработчиков</p>
+        </div>
     </header>
 
     <div class="container">
@@ -146,8 +148,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Добавьте здесь карточки других членов команды по аналогии -->
             </div>
         </section>
     </div>
@@ -155,5 +155,28 @@
     <footer>
         <p>&copy; 2025 FlacSy. Все права защищены.</p>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('nav-container');
+
+        let menuVisible = false;
+
+        menuBtn.addEventListener('click', () => {
+            if (!menuVisible) {
+                menu.classList.add('showing');
+                requestAnimationFrame(() => {
+                    menu.classList.add('visible');
+                });
+            } else {
+                menu.classList.remove('visible');
+                menu.addEventListener('transitionend', () => {
+                    menu.classList.remove('showing');
+                }, { once: true });
+            }
+
+            menuVisible = !menuVisible;
+        });
+    </script>
 </body>
 </html> 
