@@ -70,15 +70,85 @@ body{
 .sep{color:var(--muted)}
 
 /* Reveal (subtle) animations */
-[data-reveal]{opacity:0;transform:translateY(10px);will-change:transform,opacity;transition:opacity .5s cubic-bezier(.2,.9,.2,1),transform .5s cubic-bezier(.2,.9,.2,1)}
-[data-reveal].reveal-visible{opacity:1;transform:none}
+[data-reveal]{
+  opacity:0;
+  transform:translateY(10px);
+  will-change:transform,opacity;
+  /* smoother, slightly slower ease-out for a gentler reveal */
+  transition:opacity .6s cubic-bezier(.16,1,.3,1),
+             transform .6s cubic-bezier(.16,1,.3,1);
+}
+[data-reveal].reveal-visible{
+  opacity:1;
+  transform:none;
+}
 
-/* subtle hover for project cards */
-.project{transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
-.project:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(16,24,32,0.08)}
+/* subtle hover for project cards: smoother motion + rounded corners */
+.project{
+  position:relative;
+  padding:12px;
+  border-radius:8px; /* keep rounded corners */
+  overflow:hidden;    /* keep clipping for visual consistency */
+  /* disable animations/hover motion on project cards */
+  transition: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  will-change: auto;
+}
+.project:hover{
+  /* no motion or shadow on hover */
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* subtle separator line under each project for visual division */
+.project::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:0;
+  height:1px;
+  pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(16,24,32,0.06), transparent);
+}
+
+/* internal separators for readability: between title -> meta and meta -> desc */
+.project h3{margin-bottom:6px}
+.project .project-meta{
+  margin-top:8px;
+  padding-top:8px;
+  font-size:13px;
+  color:var(--muted);
+  position:relative;
+}
+.project .project-meta::before{
+  content:"";
+  display:block;
+  width:50%; /* half the block width, left-aligned */
+  height:1px;
+  margin:0 0 8px 0; /* align to left */
+  background: rgba(16,24,32,0.18); /* solid line, darker */
+}
+
+.project .project-desc{
+  margin-top:8px;
+  padding-top:8px;
+  color:var(--muted);
+  position:relative;
+}
+.project .project-desc::before{
+  content:"";
+  display:block;
+  width:50%;
+  height:1px;
+  margin:0 0 8px 0;
+  background: rgba(16,24,32,0.18);
+}
 
 /* button focus and hover */
-.btn:hover{transform:translateY(-3px)}
+.btn{transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(16,24,32,0.08)}
 .btn:focus{outline:2px solid rgba(31,111,235,0.18);outline-offset:3px}
 
 /* Footer */
@@ -93,12 +163,31 @@ body{
 }
 
 @media (max-width:700px){
-  .header-grid{flex-direction:column;align-items:flex-start}
-  .site-nav{width:100%;justify-content:flex-start;gap:10px}
-  .main-grid{padding:28px 0}
+  .header-grid{flex-direction:column;align-items:flex-start;gap:12px}
+  .brand{align-items:center}
+  .avatar{width:40px;height:40px;border-radius:6px}
+  .name{font-size:16px}
+  .role{font-size:12px}
+
+  /* make nav wrap and be touch-friendly */
+  .site-nav{width:100%;justify-content:flex-start;gap:10px;flex-wrap:wrap}
+  .site-nav a{font-size:15px;padding:10px;border-radius:8px}
+
+  .main-grid{padding:20px 0;gap:18px}
   .projects{grid-template-columns:1fr}
   .skill-columns{grid-template-columns:1fr}
+
+  /* hero adjustments for small screens */
+  .hero{padding:20px;border-radius:8px}
   .hero h1{font-size:26px}
+  .lede{font-size:15px;max-width:100%}
+  .hero-actions{flex-direction:column;gap:10px}
+  .btn{width:100%;text-align:center}
+  .btn + .btn{margin-top:6px}
+
+  /* contact and footer stack */
+  .contact-list{flex-direction:column;align-items:flex-start;gap:6px}
+  .foot-grid{flex-direction:column;align-items:flex-start;gap:8px}
 }
 
 /* utility */
