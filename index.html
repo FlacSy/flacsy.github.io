@@ -1,99 +1,155 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/styles/style.css">
-    <script src="static/scripts/activity.js" defer></script>
-    <title>FlacSy | Главная страница</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/styles/style.css">
+        <!-- Google Fonts: Inter (body) + Merriweather (headings) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <title>FlacSy — Backend Engineer</title>
+    <meta name="description" content="Backend engineer — scalable systems, Python (FastAPI), Rust, microservices, cloud-native architecture.">
+    <style>
+        /* small inline convenience to ensure smooth-scroll on older browsers */
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body>
-    <header>
-        <button class="menu-toggle" id="menuBtn">☰</button>
-        <div class="nav-container" id="nav-container">
-            <nav>
-                <a href="index.html" class="active">Главная</a>
-                <a href="portfolio.html">Портфолио</a>
-                <a href="about_me.html">О себе</a>
-                <a href="community.html">Сообщество</a>
-                <a href="contact.html">Контакты</a>
+    <header class="site-header">
+        <div class="wrap header-grid">
+            <div class="brand">
+                <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy avatar" class="avatar">
+                <div>
+                    <div class="name">FlacSy</div>
+                    <div class="role">Backend Engineer</div>
+                </div>
+            </div>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#work">Work</a>
+                <a href="#contact" class="cta">Contact</a>
             </nav>
-        </div>
-        <div class="head-container">
-            <img src="https://avatars.githubusercontent.com/u/125910405?v=4" alt="FlacSy" class="avatar">
-            <h1>FlacSy</h1>
-            <p>Backend-разработчик</p>
         </div>
     </header>
 
-    <div class="container">
-        <section class="hero">
-            <h2>Добро пожаловать на мой сайт!</h2>
-            <p>Я — Андрей, backend-разработчик. Специализируюсь на разработке высоконагруженных приложений и микросервисов. Создаю эффективные решения с использованием современных технологий.</p>
+    <main class="wrap main-grid">
+        <section id="hero" class="hero" aria-label="Hero">
+            <h1>Reliable systems. Predictable results.</h1>
+            <p class="lede">I design and build scalable, maintainable backend systems — focusing on clarity, operational stability, and long-term engineering velocity.</p>
+            <p class="hero-actions">
+                <a href="#work" class="btn">Selected projects</a>
+                <a href="#contact" class="btn btn-muted">Get in touch</a>
+            </p>
         </section>
 
-        <section class="quick-links">
-            <div class="quick-link" onclick="window.location.href='portfolio.html'">
-                <h3>Мои проекты</h3>
-                <p>Ознакомьтесь с моими последними работами и open-source проектами</p>
-            </div>
-            <div class="quick-link" onclick="window.location.href='about_me.html'">
-                <h3>Навыки</h3>
-                <p>Узнайте больше о моих технических навыках и опыте работы</p>
-            </div>
-            <div class="quick-link" onclick="window.location.href='contact.html'">
-                <h3>Связаться</h3>
-                <p>Заинтересованы в сотрудничестве? Свяжитесь со мной!</p>
+        <section id="about" class="card about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About</h2>
+            <p>Hi, I’m a backend developer focused on building scalable, reliable systems. I specialize in Python (FastAPI, SQLAlchemy, Pydantic) and use Rust for performance-critical components. My work includes designing APIs, microservices, and high-load architectures with a strong emphasis on security, stability, and long-term maintainability.</p>
+            <p>I don’t just implement features — I help choose the right technical approach, reduce future complexity, and prevent technical debt. Clear communication, predictable results, and clean architecture matter to me.</p>
+            <p class="muted">Let’s build something solid.</p>
+        </section>
+
+        <section id="skills" class="card skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <div class="skill-columns">
+                <div>
+                    <h3>Core</h3>
+                    <ul>
+                        <li>Backend Development</li>
+                        <li>REST API Design</li>
+                        <li>Microservices Architecture</li>
+                        <li>SaaS & MVP Backends</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Technologies</h3>
+                    <ul>
+                        <li>Python (FastAPI)</li>
+                        <li>Rust</li>
+                        <li>Event-Driven Architecture</li>
+                        <li>Message Queues</li>
+                        <li>Auth & Authorization</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Infrastructure</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>Linux Server Setup</li>
+                        <li>Multitenancy Systems</li>
+                        <li>System Refactoring & Scaling</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <section class="stats">
-            <div class="stat-item">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Года опыта</div>
+        <section id="work" class="card work" aria-labelledby="work-heading">
+            <h2 id="work-heading">Selected work (preview)</h2>
+            <div class="projects">
+                <article class="project">
+                    <h3>High-throughput event ingestion</h3>
+                    <p class="project-meta">Python, Rust · Event streaming · Message queueing · Observability</p>
+                    <p class="project-desc">Designed an ingestion pipeline that sustained millions of events/day with back-pressure and replay guarantees. Focus: correctness, cost-efficiency, and operational simplicity.</p>
+                </article>
+
+                <article class="project">
+                    <h3>Multitenant SaaS backend</h3>
+                    <p class="project-meta">FastAPI · PostgreSQL · CI/CD</p>
+                    <p class="project-desc">Built a multitenant architecture with secure tenant isolation, clear upgrade paths, and automated delivery pipelines for frequent, low-risk releases.</p>
+                </article>
+
+                <article class="project">
+                    <h3>Refactor & scale: legacy monolith → services</h3>
+                    <p class="project-meta">Architecture · Refactoring · Performance</p>
+                    <p class="project-desc">Led a staged refactor to microservices, reducing incident rate and improving deployment agility while maintaining strict performance SLAs.</p>
+                </article>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Завершенных проектов</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Open Source проектов</div>
-            </div>
+            <p class="muted">More case studies and repos available on request.</p>
         </section>
 
-        <section class="latest-activity">
-            <h2>Последняя активность</h2>
-            <div class="activity-list">
-                <!-- Здесь будет динамически загружаться активность -->
-            </div>
+        <section id="contact" class="card contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>If you have a technical challenge that needs reliable engineering, or want to discuss architecture, reach out.</p>
+                    <p class="contact-list">
+                        <a href="mailto:flacsy.work@gmail.com">flacsy.work@gmail.com</a>
+                        <span class="sep">•</span>
+                        <a href="https://github.com/FlacSy" target="_blank" rel="noopener">GitHub</a>
+                        <span class="sep">•</span>
+                        <a href="https://www.fiverr.com/s/38QYRbr" target="_blank" rel="noopener">Fiverr</a>
+                    </p>
         </section>
-    </div>
+    </main>
 
-    <footer>
-        <p>&copy; 2025 FlacSy. Все права защищены.</p>
+    <footer class="site-footer">
+        <div class="wrap foot-grid">
+            <div>© 2026 FlacSy</div>
+            <div class="foot-links muted">Focused on backend systems · Python · Rust</div>
+        </div>
     </footer>
+
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const menu = document.getElementById('nav-container');
+        // Subtle reveal-on-scroll using IntersectionObserver
+        (function(){
+            const revealSelector = '[data-reveal]';
+            const observer = new IntersectionObserver((entries) => {
+                for (const e of entries) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('reveal-visible');
+                        observer.unobserve(e.target);
+                    }
+                }
+            }, { threshold: 0.08 });
 
-        let menuVisible = false;
-
-        menuBtn.addEventListener('click', () => {
-            if (!menuVisible) {
-                menu.classList.add('showing');
-                requestAnimationFrame(() => {
-                    menu.classList.add('visible');
-                });
-            } else {
-                menu.classList.remove('visible');
-                menu.addEventListener('transitionend', () => {
-                    menu.classList.remove('showing');
-                }, { once: true });
-            }
-
-            menuVisible = !menuVisible;
-        });
+            document.addEventListener('DOMContentLoaded', () => {
+                for (const el of document.querySelectorAll(revealSelector)) {
+                    observer.observe(el);
+                }
+            });
+        })();
     </script>
-</body>
-</html>
+
+    </body>
+    </html>
